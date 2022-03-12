@@ -1,0 +1,55 @@
+body{
+    font-family:sans-serif;
+    font-size:11px;
+    text-transform:uppercase;
+}
+canvas{
+    position:fixed;
+    top:50vh;
+    left:50vw;
+    transform:translate(-50%, -50%);
+}
+
+#toolbar{
+    width:100vw;
+    height:auto;
+    position:fixed;
+    top:0px;
+    left:0px;
+    background:#efefef;
+    display:flex;
+}
+
+#toolbar > * {
+    padding: 10px;
+    border-right:1px solid #dedede;
+}
+
+input[type="button"]{
+    font-size:10px;
+    font-weight:bold;
+    font-family:Helvetica;
+    text-transform: uppercase;
+    color:#888888;
+    border: 1px solid #aeaeae;
+    margin-bottom:3px;
+    border-radius:3px;
+    background:#fafafa;
+    padding:3px 7px 2px 7px;
+    cursor:pointer;
+}
+#generateBtn{
+    color:#3080ff;
+}
+#downloadBtn{
+    color:black;
+}
+input[type="button"]:hover{
+    opacity:0.8;
+}
+small{
+    font-size:8px;
+}
+svg{
+    cursor:pointer;
+}

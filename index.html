@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>GBA prototype</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <canvas id="can" width="800" height="600"></canvas>
+
+        <div id="toolbar">
+            <div>
+                Number of layers:<br>
+                <input type="range" min="1" max="10" value="1" class="slider" id="numLayers" oninput="updateValues();">
+            </div>
+            <div>
+                Line weight:<br>
+                <input type="range" min="1" max="45" value="28" class="slider" id="lineWeight" oninput="updateValues();">
+            </div>
+            <div>
+                Line weight variation:<br>
+                <input type="range" min="0" max="45" value="0" class="slider" id="lineWeightVariation" oninput="updateValues();">
+            </div>
+            <div>
+                <!-- <label for="colorsToggle"> Multiple colors</label><br> -->
+                <!-- <input type="checkbox" id="colorsToggle" name="colorsToggle"> -->
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <mask id="mask0_75_465" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+                    <circle cx="10" cy="10" r="9.5" fill="white" stroke="#EFEFEF"/>
+                    </mask>
+                    <g mask="url(#mask0_75_465)">
+                    <rect x="20" y="10" width="10" height="20" transform="rotate(90 20 10)" fill="black"/>
+                    <rect x="20" width="10" height="20" transform="rotate(90 20 0)" fill="white"/>
+                    </g>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <mask id="mask0_75_464" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
+                    <circle cx="10" cy="10" r="9.5" fill="white" stroke="#EFEFEF"/>
+                    </mask>
+                    <g mask="url(#mask0_75_464)">
+                    <rect width="20" height="20" fill="url(#paint0_linear_75_464)"/>
+                    </g>
+                    <defs>
+                    <linearGradient id="paint0_linear_75_464" x1="10" y1="0" x2="10" y2="20" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FF0000"/>
+                    <stop offset="0.151042" stop-color="#FFB800"/>
+                    <stop offset="0.291667" stop-color="#EBFF00"/>
+                    <stop offset="0.432292" stop-color="#70FF00"/>
+                    <stop offset="0.572917" stop-color="#00FFE0"/>
+                    <stop offset="0.713542" stop-color="#0085FF"/>
+                    <stop offset="0.848958" stop-color="#0038FF"/>
+                    <stop offset="1" stop-color="#6100FF"/>
+                    </linearGradient>
+                    </defs>
+                </svg>
+                <br>
+                <svg id="linecap_butt" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="20" height="20" fill="black"/>
+                </svg>
+                <svg id="linecap_round" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="20" height="20" rx="10" fill="black"/>
+                </svg>
+                    
+            </div>
+            <div>
+                <input type="button" id="generateBtn" value="Regenerate" onclick="updateValues();">
+                <input type="button" id="randomizeBtn" value="Randomize" onclick="updateValues();"><br>
+                <input type="button" id="downloadBtn" value="Download"> <small>(or hit enter)</small>
+            </div>
+        </div>
+        
+        <script src="script.js" async defer></script>
+    </body>
+</html>
