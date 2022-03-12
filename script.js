@@ -164,6 +164,14 @@ document.getElementById("linecap_round").addEventListener("mousedown", function(
     updateValues();
 })
 
+function randomize(){
+    for (let slider of sliders){
+        slider.value = ran2nums(slider.min, slider.max);
+        if (Math.random()>0.5){ctrl_numLayers.value = 1}
+    }
+    updateValues();
+}
+
 function updateValues(){
     numLayers = parseInt(ctrl_numLayers.value);
     lineWeight = parseInt(ctrl_lineWeight.value);
