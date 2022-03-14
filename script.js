@@ -149,10 +149,10 @@ function draw(){
                 
 
                 // A Crossbar
-                const a_cb_x1 = (a_x1+a_x2)/2 - ran2nums(10,100);
+                const a_cb_x1 = a_x1 - ran2nums(0,100);
                 const a_cb_y1 = (a_y1+a_y2)/2 - ran2nums(10,100);
                 const a_cb_x2 = (a_x3+a_x2)/2 + ran2nums(10,100);
-                const a_cb_y2 = (a_y3+a_y2)/2 + ran2nums(10,100);
+                const a_cb_y2 = (a_y3+a_y2)/2 + ran2nums(10,50);
                 drawLine([a_cb_x1, a_cb_y1,a_cb_x2,a_cb_y2]);
 
         // }   
