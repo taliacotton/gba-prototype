@@ -113,13 +113,25 @@ function draw(){
                 
 
                 // DRAWING THE B CURVE
-                ctx.beginPath();
-                ctx.lineWidth = ran2nums(minLineWeight,maxLineWeight);
-                ctx.moveTo(bc_x1,bc_y1);
-                ctx.bezierCurveTo(bc_h1_x,bc_h1_y,bc_mid_x+bc_mid_run, bc_mid_y+bc_mid_rise,bc_mid_x,bc_mid_y);
-                ctx.bezierCurveTo(bc_mid_x-bc_mid_run, bc_mid_y-bc_mid_rise,bc_h3_x,bc_h3_y,bc_x3,bc_y3)
-                ctx.stroke();
-                ctx.closePath();
+                for (let i=0;i<numLayers;i++){
+                    ctx.beginPath();
+                    ctx.lineWidth = ran2nums(minLineWeight,maxLineWeight);
+                    ctx.moveTo(bc_x1,bc_y1);
+                    ctx.bezierCurveTo(  bc_h1_x + ran2nums(-i*layerMess, i*layerMess),
+                                        bc_h1_y + ran2nums(-i*layerMess, i*layerMess),
+                                        bc_mid_x+bc_mid_run + ran2nums(-i*layerMess, i*layerMess), 
+                                        bc_mid_y+bc_mid_rise + ran2nums(-i*layerMess, i*layerMess),
+                                        bc_mid_x + ran2nums(-i*layerMess, i*layerMess),
+                                        bc_mid_y + ran2nums(-i*layerMess, i*layerMess));
+                    ctx.bezierCurveTo(  bc_mid_x-bc_mid_run + ran2nums(-i*layerMess, i*layerMess), 
+                                        bc_mid_y-bc_mid_rise + ran2nums(-i*layerMess, i*layerMess),
+                                        bc_h3_x + ran2nums(-i*layerMess, i*layerMess),
+                                        bc_h3_y + ran2nums(-i*layerMess, i*layerMess),
+                                        bc_x3 + ran2nums(-i*layerMess, i*layerMess),
+                                        bc_y3 + ran2nums(-i*layerMess, i*layerMess))
+                    ctx.stroke();
+                    ctx.closePath();
+                }
 
 
                 // A BEND
@@ -186,7 +198,7 @@ document.getElementById("green").addEventListener("mousedown", function(){
     updateValues();
 })
 document.getElementById("red").addEventListener("mousedown", function(){
-    colorPalette = ["red"];
+    colorPalette = ["#ff0000"];
     updateValues();
 })
 
