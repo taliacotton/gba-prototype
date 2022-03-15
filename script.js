@@ -2,10 +2,11 @@ let drawHandles = false;
 
 let sliders = document.querySelectorAll("input[type='range']");
 let ctrl_numLayers = document.getElementById("numLayers");
+let ctrl_layerMess = document.getElementById("layerMess");
 let ctrl_lineWeight = document.getElementById("lineWeight");
 let ctrl_lineVariation = document.getElementById("lineWeightVariation");
-let numLayers, lineWeight, lineVariation, minLineWeight, maxLineWeight;
-let layerMess = 3;
+let numLayers, lineWeight, lineVariation, minLineWeight, maxLineWeight, layerMess;
+// let layerMess = 3;
 let colors = ["red", "green", "magenta", "blue", "yellow"];
 let colorPalette = ["#222222"];
 let linecapType = "round";
@@ -161,10 +162,10 @@ function draw(){
                 
 
                 // A Crossbar
-                const a_cb_x1 = a_x1 - ran2nums(0,100);
-                const a_cb_y1 = (a_y1+a_y2)/2 - ran2nums(10,100);
-                const a_cb_x2 = (a_x3+a_x2)/2 + ran2nums(10,100);
-                const a_cb_y2 = (a_y3+a_y2)/2 + ran2nums(10,50);
+                const a_cb_x1 = a_x1 - Math.min(ran2nums(-10,120),ran2nums(-10,120));
+                const a_cb_y1 = (a_y1+a_y2)/2 - ran2nums(-30,40);
+                const a_cb_x2 = a_x3 + ran2nums(-15,60);
+                const a_cb_y2 = (a_y3+a_y2)/2 + ran2nums(-30,40);
                 drawLine([a_cb_x1, a_cb_y1,a_cb_x2,a_cb_y2]);
 
         // }   
@@ -213,7 +214,6 @@ document.getElementById("hard").addEventListener("mousedown", function(){
 })
 
 
-
 function randomize(){
     for (let slider of sliders){
         slider.value = ran2nums(slider.min, slider.max);
@@ -224,6 +224,7 @@ function randomize(){
 
 function updateValues(){
     numLayers = parseInt(ctrl_numLayers.value);
+    layerMess = parseInt(ctrl_layerMess.value);
     lineWeight = parseInt(ctrl_lineWeight.value);
     lineVariation = parseInt(ctrl_lineVariation.value);
     minLineWeight = Math.min(lineWeight, lineWeight - lineVariation);
