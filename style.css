@@ -8,6 +8,11 @@ canvas{
     top:50vh;
     left:50vw;
     transform:translate(-50%, -50%);
+    cursor:pointer;
+}
+
+#test canvas{
+    /* pointer-events: none; */
 }
 
 #toolbar{
@@ -18,6 +23,9 @@ canvas{
     left:0px;
     background:#efefef;
     display:flex;
+
+    /* visibility: hidden; */
+    /* pointer-events: none; */
 }
 
 #toolbar > * {
@@ -52,4 +60,10 @@ small{
 }
 svg{
     cursor:pointer;
+}
+#message{
+    position:fixed;
+    bottom:5px;
+    left:5px;
+    margin-bottom:0px;
 }
