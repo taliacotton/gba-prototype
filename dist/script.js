@@ -606,4 +606,4 @@ c.addEventListener("mouseup", function(){
 })
 
 updateValues();
-// randomize();
+randomize();
