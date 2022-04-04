@@ -356,14 +356,14 @@ function draw(){
 // INTERFACE BUTTON FUNCTIONS
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-document.getElementById("linecap_butt").addEventListener("mousedown", function(){
-    linecapType = "butt";
-    updateValues();
-})
-document.getElementById("linecap_round").addEventListener("mousedown", function(){
-    linecapType = "round";
-    updateValues();
-})
+// document.getElementById("linecap_butt").addEventListener("mousedown", function(){
+//     linecapType = "butt";
+//     updateValues();
+// })
+// document.getElementById("linecap_round").addEventListener("mousedown", function(){
+//     linecapType = "round";
+//     updateValues();
+// })
 
 document.getElementById("colored").addEventListener("mousedown", function(){
     colorPalette = colors;
