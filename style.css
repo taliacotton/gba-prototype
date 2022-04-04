@@ -13,7 +13,7 @@ body{
     font-family:sans-serif;
     /* text-transform:uppercase; */
 
-    font-family: 'Halyard Text';
+    font-family: 'Halyard Text', sans-serif;
     font-feature-settings: 'ss16' on;
     user-select:none;
 }
@@ -23,6 +23,9 @@ canvas{
     left:50vw;
     transform:translate(-50%, -50%);
     cursor:pointer;
+
+    width: 100%;
+    max-width: 800px;
 }
 
 h3{
@@ -217,3 +220,13 @@ input[type=range] {
         flex-grow: 1;
     }
   }
+
+  @media screen and (max-width: 550px){
+    canvas{
+        position:fixed;
+        bottom:0px;
+        left:0px;
+        top:inherit;
+        transform:translate(0px);
+    }
+}
