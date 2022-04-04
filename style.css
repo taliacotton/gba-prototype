@@ -1,3 +1,14 @@
+@font-face {
+    font-family: Halyard;
+    font-weight:400;
+    src: url(/fonts/Halyard_Text_Regular.ttf)
+}
+@font-face {
+    font-family: Halyard;
+    font-weight:600;
+    src: url(/fonts/Halyard_Text_SemiBold.ttf)
+}
+
 :root {
     --thumb-size: 12px;
     --track-size: calc(var(--thumb-size) + 6px);
@@ -13,7 +24,7 @@ body{
     font-family:sans-serif;
     /* text-transform:uppercase; */
 
-    font-family: 'Halyard Text', sans-serif;
+    font-family: Halyard, 'Halyard Text', sans-serif;
     font-feature-settings: 'ss16' on;
     user-select:none;
 }
